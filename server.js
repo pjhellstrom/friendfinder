@@ -1,21 +1,27 @@
-// Dependencies
-var express = require("express");
+// Import express
+const express = require('express');
+const bodyParser = require('body-parser');
 
-// Create an express server
-var app = express();
+// Init express
+const app = express();
 
-// Set initial port
-var PORT = process.env.PORT || 8080;
-
-// Set up parsing functionality in express server
+// Init middleware
+// Body parser middleware
+// app.use(express.json());
+//
+// app.use(bodyParser());
+// Form submission middleware
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
-// Routing import
-require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
+// Set up link to RESTapi and import api routing file
+require('./app/routes/apiRoutes')(app);
+// Import html routing file
+require('./app/routes/htmlRoutes')(app);
 
-// Start server
-app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
-});
+// Define port
+// add process.env to look for process environment port used in deployed version
+const PORT = process.env.PORT || 5000;
+
+// Listen on a port, callback to log status
+app.listen(PORT, () => 
+    console.log(`Server listening on port ${PORT}`));

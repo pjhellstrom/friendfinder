@@ -269,34 +269,39 @@
 
   <div id="match_modal" class="modal">
     <div class="modal-content">
-      <h4 id='match-name'></h4>
-      <h4 id='match-img'>Modal Header</h4>
-      <p>A bunch of text</p>
+        <h3>You've matched with:</h3>    
+        <h4 id='match-name'></h4>
+        <img src="" id='match-image'>
+        <p>A bunch of text</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Got it!</a>
     </div>
   </div>
 
 <script type="text/javascript">
 
-    $('.modal').modal({
-      dismissible: false, // Modal can be dismissed by clicking outside of the modal
-      opacity: .5, // Opacity of modal background
-      inDuration: 300, // Transition in duration
-      outDuration: 200, // Transition out duration
-      startingTop: '4%', // Starting top style attribute
-      endingTop: '10%' // Ending top style attribute
-    });
+    $(document).ready( () => {  
 
-      
+        $('.modal').modal({
+            dismissible: true, // Modal can be dismissed by clicking outside of the modal
+            opacity: .5, // Opacity of modal background
+            inDuration: 300, // Transition in duration
+            outDuration: 200, // Transition out duration
+            startingTop: '4%', // Starting top style attribute
+            endingTop: '10%' // Ending top style attribute
+        });
+
     // Submit button listener
     $("#submit_btn").on("click" , function(e) {
       e.preventDefault();
 
-        // Set up new object to capture input data
-        var newUser = {
+        // Check form completeness
+
+        // Create new object that captures input data
+        var newFriend = {
           name: $("#name").val(),
+          image: $("#photo").val(),
           values: [
             $("#q1").find('input:checked').val(),
             $("#q2").find('input:checked').val(),
@@ -308,18 +313,30 @@
             $("#q8").find('input:checked').val(),
             $("#q9").find('input:checked').val(),
             $("#q10").find('input:checked').val()
-          ],
-          photo: $("#photo").val()
+          ]
         };
 
-        // Post request to api/friends
-        $.post("/api/friends", newUser, function(data) {
+        // Post request to /api/friends
+        $.post("/api/friends", newFriend)
+        .then(function(match) {
+            //Populate modal with match
+            console.log(`Modal match name: ${match.name}`);
+            console.log(`Modal match image: ${match.image}`);
 
+            $("#match-name").text(match.name);
+            $("#match-image").attr('src', match.image);
+            // Show modal
+            $("#match_modal").modal('open');
         });
-    
-
-
+    });
+});
 </script>
+
+<style>
+    .modal img{
+        max-height: 300px;
+    };
+</style>
 
 </body>
 

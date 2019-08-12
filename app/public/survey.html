@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>FriendFinder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Signika:300,400,700&display=swap" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  </head>
+</head>
 
 <body>
 
   <main class="container">
 
-    <h2>Friend Finding Survey! (must complete all questions)</h2>
-
+    <h2 class="center-align">Friend Finding Survey!</h2>
+    <h5 class="center-align">(You must complete all questions)</h5>
+    
     <h3>Name (Required)</h3>
-    <input type="text" id="name" class="form-control">
+    <input type="text" id="name" class="form-input">
 
     <h3>Photo Link (Required)</h3>
-    <input type="text" id="photo" class="form-control">
+    <input type="text" id="photo" class="form-input">
 
-    <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
-    <form action="#" class="chosen-select" id="q1">
+    <h4 class="teal-text text-darken-1">Your mind is always buzzing with unexplored ideas and plans.</h4>
+    <form action="#" class="radio-selection" id="q1">
       <p><label>
           <input name="group1" type="radio" value="1"/>
           <span>Disagree</span>
@@ -46,8 +48,8 @@
       </label></p>
     </form>
 
-    <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
-    <form action="#" class="chosen-select" id="q2">
+    <h4 class="teal-text text-darken-1">Generally speaking, you rely more on your experience than your imagination.</h4>
+    <form action="#" class="radio-selection" id="q2">
         <p><label>
             <input name="group1" type="radio" value="1"/>
             <span>Disagree</span>
@@ -71,8 +73,8 @@
       </form>
 
 
-    <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
-    <form action="#" class="chosen-select" id="q3">
+    <h4 class="teal-text text-darken-1">You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+    <form action="#" class="radio-selection" id="q3">
         <p><label>
             <input name="group1" type="radio" value="1"/>
             <span>Disagree</span>
@@ -95,8 +97,8 @@
         </label></p>
       </form>
 
-    <h4>You rarely do something just out of sheer curiosity.</h4>
-    <form action="#" class="chosen-select" id="q4">
+    <h4 class="teal-text text-darken-1">You rarely do something just out of sheer curiosity.</h4>
+    <form action="#" class="radio-selection" id="q4">
         <p><label>
             <input name="group1" type="radio" value="1"/>
             <span>Disagree</span>
@@ -119,8 +121,8 @@
         </label></p>
       </form>
 
-    <h4>People can rarely upset you.</h4>
-    <form action="#" class="chosen-select" id="q5">
+    <h4 class="teal-text text-darken-1">People can rarely upset you.</h4>
+    <form action="#" class="radio-selection" id="q5">
         <p><label>
             <input name="group1" type="radio" value="1"/>
             <span>Disagree</span>
@@ -143,8 +145,8 @@
         </label></p>
       </form>
 
-    <h4>It is often difficult for you to relate to other people’s feelings.</h4>
-    <form action="#" class="chosen-select" id="q6">
+    <h4 class="teal-text text-darken-1">It is often difficult for you to relate to other people’s feelings.</h4>
+    <form action="#" class="radio-selection" id="q6">
         <p><label>
             <input name="group1" type="radio" value="1"/>
             <span>Disagree</span>
@@ -167,8 +169,8 @@
         </label></p>
       </form>
 
-    <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
-    <form action="#" class="chosen-select" id="q7">
+    <h4 class="teal-text text-darken-1">In a discussion, truth should be more important than people’s sensitivities.</h4>
+    <form action="#" class="radio-selection" id="q7">
         <p><label>
             <input name="group1" type="radio" value="1"/>
             <span>Disagree</span>
@@ -191,8 +193,8 @@
         </label></p>
       </form>
 
-    <h4>You rarely get carried away by fantasies and ideas.</h4>
-    <form action="#" class="chosen-select" id="q8">
+    <h4 class="teal-text text-darken-1">You rarely get carried away by fantasies and ideas.</h4>
+    <form action="#" class="radio-selection" id="q8">
         <p><label>
             <input name="group1" type="radio" value="1"/>
             <span>Disagree</span>
@@ -215,8 +217,8 @@
         </label></p>
       </form>
 
-    <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
-    <form action="#" class="chosen-select" id="q9">
+    <h4 class="teal-text text-darken-1">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+    <form action="#" class="radio-selection" id="q9">
         <p><label>
             <input name="group1" type="radio" value="1"/>
             <span>Disagree</span>
@@ -239,8 +241,8 @@
         </label></p>
       </form>
 
-    <h4>You feel more energetic after spending time with a group of people.</h4>
-    <form action="#" class="chosen-select" id="q10">
+    <h4 class="teal-text text-darken-1">You feel more energetic after spending time with a group of people.</h4>
+    <form action="#" class="radio-selection" id="q10">
         <p><label>
             <input name="group1" type="radio" value="1"/>
             <span>Disagree</span>
@@ -262,20 +264,23 @@
             <span>Agree</span>
         </label></p>
       </form>
+      <hr>
+    <button class="btn waves-effect waves-light red" type="submit" name="action" id="submit_btn">Submit
+        <i class="material-icons right">send</i>
+    </button>
 
-    <button class="btn-large waves-effect waves-light red" type="submit" id="submit_btn">Submit</button>
-    <hr>
+
   </main>
 
   <div id="match_modal" class="modal">
     <div class="modal-content">
         <h3>You've matched with:</h3>    
         <h4 id='match-name'></h4>
-        <img src="" id='match-image'>
-        <p>A bunch of text</p>
+        <img class="center-align" src="" id='match-image'>
+        <p>Thanks for participating!</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Got it!</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="modal_btn">Close</a>
     </div>
   </div>
 
@@ -297,6 +302,9 @@
       e.preventDefault();
 
         // Check form completeness
+        // if(.form-input) {
+
+        // }
 
         // Create new object that captures input data
         var newFriend = {
@@ -329,13 +337,39 @@
             $("#match_modal").modal('open');
         });
     });
+
+    // Closing modal should clear page to prevent submission of same data
+    $("#modal_btn").on("click" , function() {
+        location.reload();
+    });
+
 });
 </script>
 
 <style>
-    .modal img{
+
+    body {
+        font-family: 'Signika', sans-serif;
+    };
+
+    h2 {
+        font-weight: 700;
+    }
+
+    h3, h4 {
+        font-weight: 300;
+        font-size: 2rem;
+    }
+
+    button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .modal img {
         max-height: 300px;
     };
+
 </style>
 
 </body>

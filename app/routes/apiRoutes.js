@@ -22,6 +22,8 @@ module.exports = function(app) {
 
         var matchName = '';
         var matchImage = '';
+
+
             
         // Loop through friends to find match
         for (let friend of friends) {
@@ -34,8 +36,13 @@ module.exports = function(app) {
             }
             // Save variance to temp array
             tempValues.push(variance);
+            
+            // Reset variance value for next loop iteration
+            variance = 0;
         }
-
+        console.log(`tempFriends: ${tempFriends}`);
+        console.log(`tempValues: ${tempValues}`);
+        console.log(`newFriendValues: ${newFriendValues}`);
         console.log(`tempFriends[indexOf(Math.min(tempValues))]: ${tempFriends[tempValues.indexOf(Math.min(...tempValues))]}`);
 
         // Check lowest variance and save name
